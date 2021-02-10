@@ -1,4 +1,4 @@
-package br.com.ufsm.pedidoService.pedidoservice;
+package br.com.ufsm.pedidoService.pedidoservice.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,20 +9,20 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "pedidos")
 
-public class Pedidos {
+public class Pedido {
 
 	private @Id @GeneratedValue long id;
 	private long idUser;
 	private long idProduct;
 	private float valorTotal;
-	
-	Pedidos(long id, long idu, long idp, float valorT){
+
+	public Pedido(long id, long idUser, long idProduct, float valorTotal) {
 		this.id = id;
-		this.idProduct = idp;
-		this.valorTotal = valorT;
+		this.idUser = idUser;
+		this.idProduct = idProduct;
+		this.valorTotal = valorTotal;
 	}
-	
-	
+
 	public long getId() {
 		return id;
 	}
